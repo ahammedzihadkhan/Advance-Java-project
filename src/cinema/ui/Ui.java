@@ -407,10 +407,6 @@ public final class Ui {
         return minutes / 60 + "h " + minutes % 60 + "m";
     }
 
-    static void info(Component parent, String message) {
-        JOptionPane.showMessageDialog(parent, message, "Matinee", JOptionPane.INFORMATION_MESSAGE);
-    }
-
     static void warn(Component parent, String message) {
         JOptionPane.showMessageDialog(parent, message, "Check this", JOptionPane.WARNING_MESSAGE);
     }

@@ -8,8 +8,9 @@ import java.util.Locale;
 
 /** Opens JDBC connections and creates the schema. */
 public final class Database {
+    // The packaged .exe sets matinee.db to a folder in the user's home, since its install folder may be read-only.
     // DB_CLOSE_DELAY=-1 keeps the embedded engine open between DAO calls instead of reopening the file.
-    private static String url = "jdbc:h2:./data/cinema;DB_CLOSE_DELAY=-1";
+    private static String url = System.getProperty("matinee.db", "jdbc:h2:./data/cinema") + ";DB_CLOSE_DELAY=-1";
 
     private static final String[] SCHEMA = {
         "CREATE TABLE IF NOT EXISTS users ("

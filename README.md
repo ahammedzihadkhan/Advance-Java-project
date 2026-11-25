@@ -12,6 +12,12 @@ You need JDK 11 or newer. The database (H2) is embedded and included in `lib`, s
 
 To run the automated checks, run `test.bat`. To reset the demo data, close the app and delete the `data` folder.
 
+## Windows app (.exe)
+
+Double-click `package.bat` to build `dist\Matinee\Matinee.exe` and `dist\Matinee-portable.zip`.
+The app includes its own Java runtime, so the PC running it does not need Java: unzip the folder anywhere and double-click `Matinee.exe`.
+The packaged app keeps its data in `C:\Users\<you>\Matinee`; delete that folder to reset its demo data.
+
 ## Features
 
 - Staff login with salted PBKDF2 password hashing

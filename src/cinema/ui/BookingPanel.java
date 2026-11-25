@@ -139,8 +139,7 @@ final class BookingPanel extends JPanel implements MainFrame.Page {
         List<String> seats = new ArrayList<>(map.selected());
         try {
             int id = bookings.book(show.id, customer, tel, seats, LocalDateTime.now());
-            Ui.info(this, "Booking #" + id + " confirmed for " + customer + ".\nSeats " + String.join(" ", seats)
-                + ", total " + Ui.money(show.price * seats.size()) + ".");
+            TicketDialog.show(this, id, show, customer, seats);
             onDone.run();
         } catch (CinemaException e) {
             Ui.error(this, e);
